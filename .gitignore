@@ -1,0 +1,12 @@
+# Ignore build directories and files
+rpmbuild/
+dist/
+
+# Ignore tarballs and RPM packages
+*.tar.gz
+*.rpm
+
+# Ignore editor-specific files
+*.swp
+*.swo
+*~
