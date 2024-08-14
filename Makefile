@@ -16,8 +16,6 @@ rpm: prepare
 	rpmbuild -bb $(NAME).spec \
 		--define "_topdir ${CURRENT_DIR}/rpmbuild" \
 		--define "SRC ${CURRENT_DIR}" \
-		--define "NAME $(NAME)" \
-		--define "ARCH $(ARCH)" \
 		--define "VERSION_NUMBER $(VERSION)" \
 		--define "RELEASE_NUMBER $(RELEASE)"
 	mv rpmbuild/RPMS/$(ARCH)/$(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm ./
