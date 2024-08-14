@@ -18,8 +18,7 @@ rpm: prepare
 		--define "SRC ${CURRENT_DIR}" \
 		--define "VERSION_NUMBER $(VERSION)" \
 		--define "RELEASE_NUMBER $(RELEASE)"
-	mv rpmbuild/RPMS/$(ARCH)/$(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm ./
-	rm -rf rpmbuild
+	mv rpmbuild/RPMS/$(ARCH)/$(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm $(DIST_DIR)
 
 clean:
 	rm -rf ${DIST_DIR}
