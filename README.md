@@ -1,19 +1,20 @@
 # Hello World RPM Package
 
-This repository contains the source code and build scripts for creating an RPM package for a simple "Hello World" application.
+This repository contains the source code and build scripts for creating an RPM package for a simple "Hello World" application written in c.
 
 ## Project Structure
 
 - `Makefile`: Contains the build and clean commands for the project.
 - `hello.spec`: The RPM spec file that defines the package metadata and build instructions.
 - `.rpmlintrc.toml`: Configuration file for `rpmlint` to suppress specific warnings.
-- `pkg/hello.sh`: The main script for the "Hello World" application.
+- `hello.c`: The main program for the "Hello World" application.
 
 ## Prerequisites
 
+- `gcc`: GNU Compiler Collection.
+- `make`: Build automation tool.
 - `rpmbuild`: RPM build tool.
 - `rpmlint`: RPM lint tool.
-- `make`: Build automation tool.
 
 ## Build Instructions
 
