@@ -12,7 +12,7 @@ prepare:
 	cp -r pkg/* ${DIST_DIR}/$(NAME)-$(VERSION)
 	tar -czvf rpmbuild/SOURCES/$(NAME)-$(VERSION).tar.gz -C ${DIST_DIR} $(NAME)-$(VERSION)
 
-rpm: prepare
+rpm-build: prepare
 	rpmbuild -bb $(NAME).spec \
 		--define "_topdir ${CURRENT_DIR}/rpmbuild" \
 		--define "SRC ${CURRENT_DIR}" \
@@ -25,5 +25,5 @@ clean:
 	rm -rf rpmbuild
 	rm -f $(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm
 
-lint:
+rpm-lint:
 	rpmlint -c .rpmlintrc.toml $(NAME).spec
