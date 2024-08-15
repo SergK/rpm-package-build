@@ -1,6 +1,7 @@
 # Ignore build directories and files
 rpmbuild/
 dist/
+pkg/
 
 # Ignore tarballs and RPM packages
 *.tar.gz

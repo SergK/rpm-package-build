@@ -28,16 +28,16 @@ Requires:       bash
 Hello World Application
 
 %prep
-%autosetup
+%setup -q
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-cp %{name}.sh $RPM_BUILD_ROOT%{_bindir}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}/%{_bindir}
+install -m 0755 %{name} %{buildroot}/%{_bindir}/%{name}
 
 
 %files
-%{_bindir}/%{name}.sh
+%{_bindir}/%{name}
 
 
 %changelog

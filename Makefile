@@ -6,7 +6,7 @@ ARCH=x86_64
 VERSION=0.1.0
 RELEASE=SNAPSHOT.1
 
-prepare:
+prepare: build
 	mkdir -p rpmbuild/SOURCES
 	mkdir -p ${DIST_DIR}/$(NAME)-$(VERSION)
 	cp -r pkg/* ${DIST_DIR}/$(NAME)-$(VERSION)
@@ -20,9 +20,14 @@ rpm-build: prepare
 		--define "RELEASE_NUMBER $(RELEASE)"
 	mv rpmbuild/RPMS/$(ARCH)/$(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm $(DIST_DIR)
 
+build:
+	mkdir -p pkg
+	gcc -g -o pkg/hello hello.c
+
 clean:
 	rm -rf ${DIST_DIR}
 	rm -rf rpmbuild
+	rm -rf pkg
 	rm -f $(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm
 
 rpm-lint:
